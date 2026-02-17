@@ -32,7 +32,7 @@ class CustomEndDrawer extends StatelessWidget {
                   Navigator.pop(context); // Close the drawer
                 },
               ),
-            ):Container(),
+            ) : const SizedBox.shrink(),
 
             Expanded(
               child: ListView(
@@ -326,8 +326,7 @@ class DrawerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: ListTile(
+    return ListTile(
         leading: SizedBox(
           width: 24,
           height: 24,
@@ -341,7 +340,6 @@ class DrawerItem extends StatelessWidget {
           //  Navigator.pop(context); // Close drawer
           onTap();
         },
-      ),
-    );
+      );
   }
 }

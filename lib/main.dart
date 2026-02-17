@@ -13,8 +13,24 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 void main() {
   runApp(
     MultiBlocProvider(providers: [
-      BlocProvider(create: (_)=>ScavengerCubit(scavengerUseCase: ScavengerUseCase(scavengerRepository: ScavengerRepoImpl(scavengerDataSource: ScavengerDataSourceImpl())))),
-      BlocProvider(create: (_)=>ShopCubit(shopUsecase: ShopUsecase(shopRepository: ShopRepositoryImpl(shopDataSource: ShopDataSourceImpl()))))
+      BlocProvider(
+          create: (_) => ScavengerCubit(
+            scavengerUseCase: ScavengerUseCase(
+              scavengerRepository: ScavengerRepoImpl(
+                scavengerDataSource: ScavengerDataSourceImpl(),
+              ),
+            ),
+          ),
+        ),
+        BlocProvider(
+          create: (_) => ShopCubit(
+            shopUsecase: ShopUsecase(
+              shopRepository: ShopRepositoryImpl(
+                shopDataSource: ShopDataSourceImpl(),
+              ),
+            ),
+          ),
+        )
     ], child: const MyApp()));
 }
 
@@ -27,7 +43,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const BottomNavScreen(),
     );
