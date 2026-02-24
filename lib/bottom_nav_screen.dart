@@ -1,6 +1,7 @@
 import 'package:bloc_code/End_drawer.dart';
 import 'package:bloc_code/Feature/CartScreen/presentation/pages/cart_screen.dart';
 import 'package:bloc_code/Feature/MainScreen/presentation/pages/home_screen.dart';
+import 'package:bloc_code/Feature/NotificationScreen/presentation/pages/notifi_screen.dart';
 import 'package:bloc_code/Feature/RegScreen/presentation/pages/reg_screen.dart';
 import 'package:bloc_code/Feature/ShopScreen/presentation/pages/shop_screen.dart';
 import 'package:bloc_code/core/constant/app_colors.dart';
@@ -56,7 +57,9 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
               icon: const Icon(Icons.qr_code_scanner_sharp),
             ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>NotifiScreen()));
+            },
             icon: const Icon(Icons.mail_outline, color: Colors.black),
           ),
           Builder(

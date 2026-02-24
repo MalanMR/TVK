@@ -6,7 +6,7 @@ class ApiConstant{
   static const String addtocartUrl = "http://13.234.251.159:8081/api/Cart/addEventsToCart?";
   static const String SponserListUrl = "http://13.234.251.159:8081/api/Gallery/GetSponsors";
   static const String SponsorData = "http://13.234.251.159:8081/api/Gallery/GetSponsorsData?";
-  static const String fetchUserLogs = "http://13.234.251.159:8081/api/Gallery/GetInAppNotificationList?";
+  static const String fetchUserLogs = "http://13.234.251.159:8081/api/Gallery/GetInAppNotificationList?guid=";
   static const String GetEventRules = "http://13.234.251.159:8081/api/Events/GetEventRules?";
   static const String fetchParticipants = "http://13.234.251.159:8081/api/Register/GetRegisteredPeoples?";
   static const String whatsappupdateUrl = "http://13.234.251.159:8081/api/Events/WhatsAppLinkUpdate";

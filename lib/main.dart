@@ -1,3 +1,7 @@
+import 'package:bloc_code/Feature/NotificationScreen/data/dataSource/notifi_data_source.dart';
+import 'package:bloc_code/Feature/NotificationScreen/data/repositories/notifi_repo_impl.dart';
+import 'package:bloc_code/Feature/NotificationScreen/domain/useCases/notifi_usecase.dart';
+import 'package:bloc_code/Feature/NotificationScreen/presentation/cubit/notifi_cubit.dart';
 import 'package:bloc_code/Feature/ScavengerScreen/data/dataSource/scavenger_data_source.dart';
 import 'package:bloc_code/Feature/ScavengerScreen/data/repositories/scavenger_repo_impl.dart';
 import 'package:bloc_code/Feature/ScavengerScreen/domain/useCases/scavenger_use_case.dart';
@@ -30,7 +34,16 @@ void main() {
               ),
             ),
           ),
-        )
+        ),
+      BlocProvider(
+          create: (_)=>NotifiCubit(
+              notifiUsecase: NotifiUsecase(
+                  notifiRepository: NotifiRepoImpl(
+                      notifiDataSource: NotifiDataSourceImpl()
+                  )
+              )
+          )
+      )
     ], child: const MyApp()));
 }
 

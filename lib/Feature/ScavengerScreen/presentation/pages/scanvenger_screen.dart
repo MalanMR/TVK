@@ -27,6 +27,8 @@ class _ScavengerScreenState extends State<ScavengerScreen> {
         builder: (context,state) {
           if(state is ScavengerLoadingState){
             return Center(child: CircularProgressIndicator.adaptive());
+          }else if( state is ScavengerErrorState){
+            return Center(child: Text(state.message));
           }else if(state is ScavengerSucessState){
             return SingleChildScrollView(
               child: Column(
@@ -50,7 +52,6 @@ class _ScavengerScreenState extends State<ScavengerScreen> {
                             image: const DecorationImage(
                               image: AssetImage("assets/ach_back.jpeg"), // your image path
                               fit: BoxFit.fitWidth, // cover entire background
-                              // optional: make it faint so text is visible
                             ),
                           ),
                           child: Column(
@@ -316,8 +317,6 @@ class _ScavengerScreenState extends State<ScavengerScreen> {
                 ],
               ),
             );
-          }else if( state is ScavengerErrorState){
-            return Center(child: Text(state.message));
           }
           return Center(child: Text('Something went wrong'));
         }
